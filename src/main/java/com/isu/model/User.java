@@ -12,7 +12,7 @@ public class User implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	@Id
-	private String userName;
+	private String netId;
 	@Column(name = "firstname", nullable = false)
 	private String firstName;
 	@Column(name = "lastname")
@@ -20,11 +20,11 @@ public class User implements Serializable {
 	@Column(name = "role")
 	private String role = "TA";		//The default role is TA
 	
-	public String getUserName() {
-		return userName;
+	public String geNetId() {
+		return netId;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUserName(String netId) {
+		this.netId = netId;
 	}
 	public String getFirstName() {
 		return firstName;
