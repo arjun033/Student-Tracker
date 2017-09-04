@@ -1,9 +1,14 @@
 package com.isu.model;
 
 import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +24,8 @@ public class User implements Serializable {
 	private String lastName;
 	@Column(name = "role")
 	private String role = "TA";		//The default role is TA
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "user")
+	private List<Comment> comments;
 	
 	public String geNetId() {
 		return netId;
